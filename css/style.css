@@ -1,0 +1,546 @@
+:root {
+ --bg:#000000;
+    --bg-secondary:#111111;
+
+    --card:#171717;
+
+    --text:#F3F3F3;
+    --text-muted:#8A8A8A;
+
+    --border:#242424;
+
+    --accent:#B11226;
+    --accent-hover:#D61F3A;
+
+    --glow:rgba(177,18,38,.35);
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    /* min-height: 5000px; */
+} 
+
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgb(1, 1, 1, 0.8);
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    height: 80px;
+    padding: 0 7%;
+}
+
+.navbar .navbar-logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar .navbar-nav a {
+    color: white;
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--accent-hover);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--accent);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+    color: white;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--accent-hover);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+/* === hero section === */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    background:linear-gradient(0deg, rgba(1, 1, 3, 1) 3%, rgba(255, 255, 255, 0)55%);
+} 
+
+.hero .hero-content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .hero-content h1 {
+    font-size: 5em;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+}
+
+.hero .hero-content h1 span {
+    color: var(--accent);
+}
+
+.hero .hero-content p {
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+    color: white;
+    line-height: 1.4;
+    font-weight: 100;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .hero-content .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.3rem;
+    transition: .3s;
+     box-shadow:
+    0 0 5px var(--glow),
+    0 0 15px var(--glow);
+}
+
+/* === about section === */
+.about, .collection, .contact {
+    padding: 5rem 7% 2rem ;
+}
+
+.about h2, .contact h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.about .row .about-img {
+    flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.about .row .content {
+    flex: 1 1 35rem;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+.about .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+
+/* === collection section === */
+.collection h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.collection p, .contact p {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-weight: 500;
+    margin: auto;
+    line-height: 1.6;
+    
+}
+
+.collection .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.collection .row .collection-card{
+text-align: center;    
+max-width: 350px;
+flex: 1;
+padding-bottom: 4rem; ;
+}
+
+.img1 {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.img2 {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.img3 {
+    height: 400px;
+    width: 270px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.img4 {
+    height: 400px;
+    width: 270px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.collection .row .collection-img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.collection .row .collection-card h3 {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.collection .row .collection-card p {
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    display: block;
+    
+}
+
+.collection .row .collection-card a.cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.3rem;
+    transition: 0.3s ease;
+    box-shadow:
+    0 0 5px var(--glow),
+    0 0 15px var(--glow);
+}
+.collection .row .collection-card-info {
+    margin: 1.5rem auto 0.5rem;
+}
+
+
+
+
+/* === contact section === */
+.contact .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+    margin-bottom: 3rem;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    border: none;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    min-height: 300px;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form .input-group{
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    padding-left: 2rem;
+}
+
+
+.contact .row form, .input-group input, .input-group textarea {
+width: 100%;
+padding: 1rem;    
+font-size: 1.7rem;
+background:none;
+}
+
+.contact .row form .input-group input, .input-group textarea {
+    color: white;
+}
+
+.cta {
+    display: flex;
+}
+
+.contact .row form .cta {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1.4rem;
+    color: white;
+    background-color: var(--accent);
+    cursor: pointer;
+    border-radius: 0.3rem;
+    transition: 0.3s ease;
+     box-shadow:
+    0 0 5px var(--glow),
+    0 0 15px var(--glow);
+    
+}
+
+
+/* === footer === */
+
+footer {
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    background-color: var(--accent-hover);
+    position: relative;
+    background: #050505;
+    overflow: hidden;
+}
+
+footer::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    right:0;
+    bottom:-50px;
+
+    background:url('img/dead-rose.png');
+
+    background-size:contain;
+    background-repeat:no-repeat;
+
+    opacity:.06;
+
+}
+
+footer .judul {
+    font-weight: 600;
+}
+
+footer .socials {
+    padding-bottom: 1rem;
+}
+
+footer .socials a {
+    color: whitesmoke;
+    margin: 1rem;
+}
+
+footer .socials a:hover
+{
+    color: var(--accent);
+}
+footer .credit {
+    font-size: 0.8rem;
+    color: white;
+}
+
+footer .tujuh {
+    color: white;
+    text-decoration: none;
+}
+
+footer .credit a {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+
+
+
+/* === media queries === */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+/* tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: black;
+        width: 30rem;
+        height: 100vh;
+
+        gap: 0.5rem;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start ;
+        transition: 300ms ease-in-out;
+    }
+
+.navbar .navbar-nav.active {
+    right: 0;
+}
+
+    .navbar .navbar-nav a {
+        display: block;
+        padding: 1.5rem;
+        font-size: 1.8rem;
+        color: white;
+        margin: 0.5rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0; 
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.2);
+    }
+
+    
+    .about .row {
+        flex-wrap: wrap;
+    }
+
+    .about .row .about-img img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center ;
+    }
+    .about .row .about-img, .about .row .content {
+        flex: 1 1 100%;
+    }
+    .about .row .content {
+        padding: 0;
+    }
+
+    .collection p {
+        font-size: 1.2rem;
+    }
+
+    .contact .row {
+        flex-wrap: wrap;
+
+    }
+
+    .contact .row .map {
+        height: 30rem;
+    }
+
+    .contact .row form {
+        padding-top: 0;
+    }
+}
+/* hp */
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
