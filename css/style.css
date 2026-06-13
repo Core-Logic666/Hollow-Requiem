@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=JetBrains+Mono:wght@400;500&display=swap');
 :root {
  --bg:#000000;
     --bg-secondary:#111111;
@@ -27,6 +28,9 @@ body {
     /* min-height: 5000px; */
 } 
 
+h2, h3 {
+    font-family:'Cinzel',serif;
+}
 
 /* navbar */
 .navbar {
@@ -95,10 +99,40 @@ body {
 #hamburger-menu {
     display: none;
 }
+/* Navbar END */
+/* Search section */
+.search-form{
+    display:none;
+    position:fixed;
+    top:80px;
+    right:2rem;
+    z-index:999;
+    /* margin-right: 1100; */
+}
 
-/* === hero section === */
+.search-form.active{
+    display:block;
+}
 
-.hero {
+.search-form input{
+    padding:1rem;
+    width:300px;
+    border:none;
+    outline:none;
+    border-radius:0.5rem;
+}
+
+/* Search end */
+
+/* cart start */
+
+
+
+/* cart end */
+
+/* ============================================================================================ hero section ================================================================================ */
+
+.hero{
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -109,7 +143,7 @@ body {
     position: relative;
 }
 
-.hero::after {
+.hero::after{
     content: '';
     display: block;
     position: absolute;
@@ -160,6 +194,139 @@ body {
     0 0 5px var(--glow),
     0 0 15px var(--glow);
 }
+
+/* === hero ke 2 collectiom.php === */
+
+.hero1 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img/hero2.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    background:linear-gradient(0deg, rgba(1, 1, 3, 1) 3%, rgba(255, 255, 255, 0)55%);
+} 
+
+.hero1 .hero-content1 {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero1 .hero-content1 h1 {
+    font-size: clamp(2rem, 6vw, 5rem);
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+}
+
+.hero1 .hero-content1 h1 span {
+    color: var(--accent);
+   
+}
+
+.hero1 .hero-content1 p {
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+    color: white;
+    line-height: 1.4;
+    font-weight: 100;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero1 .hero-content1 .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.3rem;
+    transition: .3s;
+     box-shadow:
+    0 0 5px var(--glow),
+    0 0 15px var(--glow);
+}
+/* hero 2 end */
+/* hero 3 start */
+.hero2 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img/hero3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero2::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    background:linear-gradient(0deg, rgba(1, 1, 3, 1) 3%, rgba(255, 255, 255, 0)55%);
+} 
+
+.hero2 .hero-content2 {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero2 .hero-content2 h1 {
+    font-size: clamp(2rem, 6vw, 5rem);
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+}
+
+.hero2 .hero-content2 h1 span {
+    color: var(--accent);
+   
+}
+
+.hero2 .hero-content2 p {
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+    color: white;
+    line-height: 1.4;
+    font-weight: 100;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero2 .hero-content2 .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.3rem;
+    transition: .3s;
+     box-shadow:
+    0 0 5px var(--glow),
+    0 0 15px var(--glow);
+}
+
+/* ================================================HERO SECTION============================================================= */
 
 /* === about section === */
 .about, .collection, .contact {
@@ -226,7 +393,8 @@ body {
 }
 
 .collection .row {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     flex-wrap: wrap;
     margin-top: 5rem;
     justify-content: center;
@@ -236,36 +404,30 @@ body {
 }
 
 .collection .row .collection-card{
-text-align: center;    
-max-width: 350px;
-flex: 1;
-padding-bottom: 4rem; ;
+    width: 320px;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(5px);
 }
 
-.img1 {
-    height: 400px;
-    object-fit: cover;
-    border-radius: 1rem;
+.collection-card {
+    display: flex;
+    flex-direction: column;
 }
 
-.img2 {
-    height: 400px;
-    object-fit: cover;
-    border-radius: 1rem;
+.collection-card .cta {
+    margin-top: auto;
 }
 
-.img3 {
+.collection-card img {
+    width: 100%;
     height: 400px;
-    width: 270px;
     object-fit: cover;
+    object-position: center;
     border-radius: 1rem;
-}
-
-.img4 {
-    height: 400px;
-    width: 270px;
-    object-fit: cover;
-    border-radius: 1rem;
+    display: block;
 }
 
 .collection .row .collection-img {
@@ -283,10 +445,8 @@ padding-bottom: 4rem; ;
 .collection .row .collection-card p {
     margin-top: 0.5rem;
     font-size: 1.4rem;
-    color: var(--text-muted);
     line-height: 1.6;
-    display: block;
-    
+    min-height: 120px;
 }
 
 .collection .row .collection-card a.cta {
@@ -445,6 +605,150 @@ footer .credit a {
 
 
 
+/* === Login CSS === */
+
+
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #111;
+}
+
+.login-box{
+    width:400px;
+    background:#111;
+    padding:40px;
+    border-radius:10px;
+    border:1px solid #222;
+    justify-content: center;
+}
+
+.login-box h1{
+    text-align:center;
+    color:#fff;
+    margin-bottom:30px;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group input{
+    width:100%;
+    padding:12px;
+    background:#1a1a1a;
+    border:1px solid #333;
+    color:white;
+    border-radius:5px;
+}
+
+.btn{
+    width:100%;
+    padding:12px;
+    background:#8B0000;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.btn:hover{
+    background:#A30000;
+}
+
+.error{
+    color:red;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+
+/* ================= US.php khusus ================================= */
+/* ===== DEVS SECTION ===== */
+
+.devs {
+    background-image: var(--border);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    padding: 7rem 7% 3rem;
+}
+
+.devs h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 4rem;
+    color: white;
+}
+
+.devs .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    gap: 1rem;
+}
+
+.devs .dev-col {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: left;
+    max-width: 400px;
+    transition: 0.3s ease;
+}
+
+.devs .dev-col:hover {
+    transform: translateY(-5px);
+}
+
+.devs .dev-col img {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.devs .dev-col h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.devs .dev-col p {
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.devs .dev-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.devs .dev-col ul li {
+    margin: 0.8rem 0;
+}
+
+.devs .dev-col ul li a {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: 0.3s;
+}
+
+.devs .dev-col ul li a:hover {
+    color: var(--accent);
+}
+
 
 /* === media queries === */
 
@@ -537,6 +841,9 @@ footer .credit a {
     .contact .row form {
         padding-top: 0;
     }
+
+    
+
 }
 /* hp */
 @media (max-width: 450px) {

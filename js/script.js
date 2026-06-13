@@ -12,3 +12,40 @@ document.addEventListener('click', function (e) {
         navbarNav.classList.remove('active');
     }
 });
+
+
+// search
+const searchBtn = document.querySelector('#search');
+const searchForm = document.querySelector('.search-form');
+
+searchBtn.addEventListener('click', () => {
+    searchForm.classList.toggle('active');
+});
+const searchBox =
+document.querySelector('#search-box');
+
+searchBox.addEventListener('keyup', () => {
+
+    let keyword =
+    searchBox.value.toLowerCase();
+
+    let products =
+    document.querySelectorAll('.collection-card');
+
+    products.forEach(product => {
+
+        let name =
+        product.querySelector('.product-name')
+        .textContent
+        .toLowerCase();
+
+        if(name.includes(keyword)){
+            product.style.display = 'block';
+        }else{
+            product.style.display = 'none';
+        }
+
+    });
+
+});
+
